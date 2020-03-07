@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Skin Lesion Analyzer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Use the power of Machine Learning to diagnose Skin Lesions.">
+
+
+<!--Code to prevent the browser from caching the page-->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+
+
+
+
+
+<!--CSS Stylesheets-->
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="skin.css">
+
+<!--Link to Font Awesome icons-->
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css' integrity='sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns' crossorigin='anonymous'>
+
+<!--Link to fonts from google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+
+
+<link rel="shortcut icon" type="image/png" href="images.png">
+
+
+
+
+<style>
+html,body,h2,h3,h4 {font-family: Helvetica, sans-serif}
+</style>
+
+
+</head>
+
+
+<body class="w3-pale-blue">
+
+
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content. -->
+<div class="w3-content card" style="max-height:600px">
+
+
+
+<!-- 1. HOME PAGE TAB -->
+<div class="tabbed w3-animate-opacity w3-white" id="home">
+
+	<div class="w3-left-align">
+		<img class="w3-round adjust-image" src="images.png" alt=""> 
+	</div> 
+	
+
+<!-- Header -->
+<div class="w3-center title adjust-fontcolor logo">
+	
+  <h1 class="space-letters w3-text-blue">
+
+
+  </i><b>Skin Cancer Detection</b></h1>
+  <h5 class="space-letters tag-font w3-text-red"><b><br> </b></h5>
+</div>
+
+
+
+
+<!-- Front page image -->
+<!-- This image will be replaced once the js code runs. -->
+
+<div class="w3-center">
+	<img id="selected-image" class="w3-round adjust-image" src="samplepic.jpg" alt=""> 
+</div>
+<div class="w3-center">
+	<div class="progress-bar">Ai is Loading...</div>
+</div>
+
+
+<div class="w3-center add-padding w3-border add-margin side-margin w3-round w3-pale-blue">
+		
+	<h5 class='new-font'><b>Results</b></h5>
+	<ol class='w3-left-align' id='prediction-list'></ol>
+		
+</div>
+
+
+<!-- Button -->
+<div id="btnn" class="w3-center bottom-padding">
+	
+	<button class="w3-btn w3-purple w3-round w3-margin-bottom adjust-spacing w3-hover-red btn-font w3-padding w3-space-letters w3-card-4" onclick="setTimeout(simulateClick.bind(null, 'image-selector'), 200)"><i class='fas fa-camera w3-padding-right' style='font-size:15px'></i><b>Submit an Image</b></button>
+</div> 
+
+
+
+
+
+
+
+
+
+
+</div><!--END OF HOME PAGE TAB-->
+
+
+
+<!-- We simulate clicks on these two. -->
+<div class="hide">
+	<button id='predict-button'>Predict</button>
+</div>
+
+<div class="hide">
+	<input id="image-selector" type="file">
+</div>
+<!--===================================-->
+
+
+	<!-- Load jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	
+
+	</script>
+	<!-- Load TensorFlow.js -->
+	
+	<!--script src="C:\Users\ASUS\tensorflowjs\static\tfjs_models\model_master.json"--> 
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"> 
+	</script>
+	
+	
+	<script src="skin_classes.js"></script>
+	<script src="predict202.js"></script> 
+	
+		
+	
+</div> <!-- w3-content -->
+<div class="w3-right">
+	<img id="selected-image" class="w3-round adjust-image" src="univ.png" alt=""> 
+</div>
+<div class="w3-center"></div>
+</body>
+</html>
+
